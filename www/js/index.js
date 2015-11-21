@@ -34,6 +34,7 @@ var app = {
     // function, we must explicitly call 'app.receivedEvent(...);'
     onDeviceReady: function() {
         app.receivedEvent('deviceready');
+        nfc.addNdefListener(callback, [alert("Success!");], [alert("Failure");]);
     },
     // Update DOM on a Received Event
     receivedEvent: function(id) {
