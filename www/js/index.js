@@ -37,7 +37,7 @@ var app = {
          nfc.addNdefListener(
         function (nfcEvent) {
             var tag = nfcEvent.tag;
-            var ndefMessage = tag.ndefMessage.payload;
+            var ndefMessage = tag.ndefMessage[0].payload;
             var convert = nfc.bytesToString(ndefMessage);
             console.log(ndefMessage);
             alert(convert);
