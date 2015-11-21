@@ -37,9 +37,10 @@ var app = {
          nfc.addNdefListener(
         function (nfcEvent) {
             var tag = nfcEvent.tag;
-            var ndefMessage = tag.ndefMessage[0];
+            var ndefMessage = tag.ndefMessage.payload;
+            var convert = ndef.bytesToHexString(ndefMessage);
             console.log(ndefMessage);
-            alert(ndefMessage);
+            alert(convert);
         },
         function () { // success callback
             alert("Waiting for NDEF tag");
