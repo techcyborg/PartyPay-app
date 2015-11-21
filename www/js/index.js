@@ -38,7 +38,7 @@ var app = {
         function (nfcEvent) {
             var tag = nfcEvent.tag;
             var ndefMessage = tag.ndefMessage.payload;
-            var convert = ndef.bytesToHexString(ndefMessage);
+            var convert = nfc.bytesToString(ndefMessage);
             console.log(ndefMessage);
             alert(convert);
         },
