@@ -38,6 +38,7 @@ var app = {
         function (nfcEvent) {
             var tag = nfcEvent.tag;
             var ndefMessage = tag.ndefMessage[0];
+            console.log(ndefMessage);
             alert(ndefMessage);
         },
         function () { // success callback
