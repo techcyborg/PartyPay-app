@@ -36,7 +36,7 @@ var app = {
         app.receivedEvent('deviceready');
          nfc.addNdefListener(
         function (nfcEvent) {
-            var tag = nfcEvent.tag,
+            var tag = nfcEvent.tag;
             var ndefMessage = tag.ndefMessage;
             alert(ndefMessage);
         },
