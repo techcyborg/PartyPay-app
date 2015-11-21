@@ -38,6 +38,14 @@ var app = {
         function (nfcEvent) {
             var tag = nfcEvent.tag,
                 ndefMessage = tag.ndefMessage;
+        },
+        function () { // success callback
+            alert("Waiting for NDEF tag");
+        },
+        function (error) { // error callback
+            alert("Error adding NDEF listener " + JSON.stringify(error));
+        }
+    );
     },
     // Update DOM on a Received Event
     receivedEvent: function(id) {
