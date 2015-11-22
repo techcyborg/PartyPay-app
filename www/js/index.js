@@ -34,7 +34,23 @@ var app = {
     // function, we must explicitly call 'app.receivedEvent(...);'
     onDeviceReady: function() {
         app.receivedEvent('deviceready');
-     
+		nfc.addNdefListener(
+		function (nfcEvent) {
+			var tag = nfcEvent.tag;
+			var ndefMessage = tag.ndefMessage[0].payload;
+			var convert = nfc.bytesToString(ndefMessage);
+			console.log(ndefMessage);
+			alert(convert);
+		},
+		function () { // success callback
+			//alert("Waiting for NDEF tag");
+
+			alert("Successful");
+		},
+		function (error) { // error callback
+			alert("Error " + JSON.stringify(error));
+		}
+		);
     },
     // Update DOM on a Received Event
     receivedEvent: function(id) {
