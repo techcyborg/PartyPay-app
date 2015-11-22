@@ -1,0 +1,15 @@
+.button {
+	width: 24% !important;
+}
+
+img {
+	width: 100%;
+}
+
+#page_one, #page_two, #page_three, #page_four {
+	display: none;
+}
+
+.see_me{
+	display: block !important;
+}
